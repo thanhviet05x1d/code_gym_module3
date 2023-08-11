@@ -105,6 +105,26 @@ CREATE TABLE IF NOT EXISTS hop_dong (
     ma_dich_vu_di_kem INT NOT NULL
 );
 
+-- task2 2023-08-11 ---
+-- khi can xoa: ALTER TABLE nhan_vien DROP FOREIGN KEY lk1;
 
- 
-     
+alter table nhan_vien
+add constraint nhan_vien_lk1 foreign key (`ma_vi_tri`) references vi_tri(`ma_vi_tri`),
+add constraint nhan_vien_lk2 foreign key (`ma_trinh_do`) references trinh_do(`ma_trinh_do`),
+add constraint nhan_vien_lk3 foreign key (`ma_bo_phan`) references bo_phan(`ma_bo_phan`);
+
+alter table khach_hang
+add constraint khach_hang_lk1 foreign key (`ma_loai_khach`) references loai_khach(`ma_loai_khach`);
+
+alter table hop_dong
+add constraint hop_dong_lk1 foreign key (`ma_khach_hang`) references khach_hang(`ma_khach_hang`),
+add constraint hop_dong_lk2 foreign key (`ma_nhan_vien`) references nhan_vien(`ma_nhan_vien`),
+add constraint hop_dong_lk3 foreign key (`ma_dich_vu`) references dich_vu(`ma_dich_vu`);
+
+alter table hop_dong_chi_tiet
+add constraint hop_dong_chi_tiet_lk1 foreign key (`ma_hop_dong`) references hop_dong(`ma_hop_dong`),
+add constraint hop_dong_chi_tiet_lk2 foreign key (`ma_dich_vu_di_kem`) references dich_vu_di_kem(`ma_dich_vu_di_kem`);
+
+alter table dich_vu
+add constraint dich_vu_lk1 foreign key (`ma_kieu_thue`) references kieu_thue(`ma_kieu_thue`),
+add constraint dich_vu_lk2 foreign key (`ma_loai_dich_vu`) references loai_dich_vu(`ma_loai_dich_vu`);
