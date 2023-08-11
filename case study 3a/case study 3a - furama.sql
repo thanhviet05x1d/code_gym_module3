@@ -1,3 +1,5 @@
+create database furama_database;
+use furama_database;
 CREATE TABLE IF NOT EXISTS vi_tri (
     ma_vi_tri INT PRIMARY KEY,
     ten_vi_tri VARCHAR(50) NOT NULL
