@@ -1,9 +1,9 @@
 use furama_database;
-/* câu 2 (Cách 1) */
+/* câu 2 (Cách 1 - lấy theo họ) */
 
 select * from nhan_vien where (ho_ten like 'H%' or ho_ten like 'T%' or ho_ten like 'K%') and char_length(ho_ten)<=15;
 
-/* Câu 2 (Cách 2) */
+/* Câu 2 (Cách 2 - lấy theo tên) */
 select * from nhan_vien 
 where (substring_index(ho_ten," ", -1) like 'H%' or
 substring_index(ho_ten," ", -1) like 'T%' or
@@ -12,7 +12,7 @@ char_length(ho_ten) <=15;
 
 
 /* Câu 3. Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”  */
-SELECT * FROM khach_hang WHERE YEAR(NOW()) - YEAR(ngay_sinh) BETWEEN 18 AND 50 AND (dia_chi like '%Đà Nẵng' OR dia_chi like '%Quảng Trị');
+SELECT * FROM khach_hang WHERE timestampdiff(year, khachhang.ngay_sinh,now()) BETWEEN 18 AND 50 AND (dia_chi like '%Đà Nẵng' OR dia_chi like '%Quảng Trị');
 
 /* Câu 4. Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. 
 Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
@@ -39,7 +39,7 @@ phải xuất hiện trong mệnh đề `GROUP BY`.
 
 SELECT khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach,
     hop_dong.ma_hop_dong, dich_vu.ten_dich_vu, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc, 
-    dich_vu.chi_phi_thue + SUM(IFNULL(hop_dong_chi_tiet.so_luong, 0) * dich_vu_di_kem.gia) AS tong_tien
+    ifnull(dich_vu.chi_phi_thue + SUM(IFNULL(hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia,0)),0) AS tong_tien
 FROM khach_hang
 LEFT JOIN loai_khach ON khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
 LEFT JOIN hop_dong ON khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
@@ -49,5 +49,3 @@ LEFT JOIN dich_vu ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
 GROUP BY khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach,
     hop_dong.ma_hop_dong, dich_vu.ten_dich_vu, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc
 ORDER BY khach_hang.ma_khach_hang;
-
-
