@@ -131,3 +131,44 @@ begin
     end if;
 end //
 delimiter ;
+
+/* Câu 27. Tạo Function thực hiện yêu cầu sau:
+a. Tạo Function func_dem_dich_vu: Đếm các dịch vụ đã được sử dụng với tổng tiền là > 2.000.000 VNĐ.
+ */
+ -- a. Tạo Function func_dem_dich_vu: Đếm các dịch vụ đã được sử dụng với tổng tiền là > 2.00.000 VNĐ.
+ 
+ set global log_bin_trust_function_creators = 1; -- Mới có thể tạo được function
+ 
+ delimiter //
+create function func_dem_dich_vu() returns int
+begin
+    declare total_count int;
+    select count(*) into total_count
+    from hop_dong_chi_tiet hc
+    join dich_vu_di_kem dk on hc.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
+    where hc.so_luong * dk.gia > 200000;
+    return total_count;
+end;
+//
+delimiter ;
+
+select func_dem_dich_vu();
+
+/* b. Tạo Function func_tinh_thoi_gian_hop_dong: Tính khoảng thời gian dài nhất tính từ lúc bắt đầu làm hợp đồng đến 
+lúc kết thúc hợp đồng mà khách hàng đã thực hiện thuê dịch vụ (lưu ý chỉ xét các khoảng thời gian dựa vào từng lần làm hợp đồng 
+thuê dịch vụ, không xét trên toàn bộ các lần làm hợp đồng). Mã của khách hàng được truyền vào như là 1 tham số của function này. */
+
+delimiter //
+create function func_tinh_thoi_gian_hop_dong(ma_khach_hang int) returns int
+begin
+    declare max_duration int;
+    select max(datediff(hd.ngay_ket_thuc, hd.ngay_lam_hop_dong)) into max_duration
+    from hop_dong hd
+    where hd.ma_khach_hang = ma_khach_hang;
+    return max_duration;
+end //
+delimiter ;
+
+select func_tinh_thoi_gian_hop_dong(3); -- Thay 1 bằng mã khách hàng cần kiểm tra
+
+ 
