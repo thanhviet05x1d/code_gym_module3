@@ -41,11 +41,3 @@ insert into Permision(id, name) values(1, 'add');
 insert into Permision(id, name) values(2, 'edit');
 insert into Permision(id, name) values(3, 'delete');
 insert into Permision(id, name) values(4, 'view');
-
-create table Employee ( 
-            id int(3) NOT NULL AUTO_INCREMENT, 
-            name varchar(120) NOT NULL, 
-            salary int(220) NOT NULL, 
-            created_Date datetime, 
-            PRIMARY KEY (id) 
-);
