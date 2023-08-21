@@ -171,4 +171,50 @@ delimiter ;
 
 select func_tinh_thoi_gian_hop_dong(3); -- Thay 1 bằng mã khách hàng cần kiểm tra
 
+ /*Câu 28. Tạo Stored Procedure sp_xoa_dich_vu_va_hd_room để tìm các dịch vụ được thuê bởi khách hàng với loại dịch vụ
+ là “Room” từ đầu năm 2015 đến hết năm 2019 để xóa thông tin của các dịch vụ đó (tức là xóa các bảng ghi trong bảng dich_vu)
+ và xóa những hop_dong sử dụng dịch vụ liên quan (tức là phải xóa những bản ghi trong bảng hop_dong) và những bản liên quan khác*/
+ 
+ delimiter //
+ create procedure sp_xoa_dich_vu_va_hd_room()
+ begin
+	declare done int default false;
+    declare ma_dich_vu int;
+    declare cur cursor for
+    select ma_dich_vu
+    from dich_vu
+    where loai_dich_vu = 'room' and year(ngay_lam_hop_dong) between 2015 and 2019;
+    declare continue handler for not found set done = true;
+    open cur;
+    read_loop: loop
+        fetch cur into ma_dich_vu;
+        if done then
+            leave read_loop;
+        end if;
+        -- xóa các bản ghi liên quan trong bảng hop_dong_chi_tiet
+        delete from hop_dong_chi_tiet where ma_dich_vu_di_kem = ma_dich_vu;
+        
+        -- xóa các bản ghi liên quan trong bảng hop_dong
+        delete from hop_dong where ma_hop_dong in (
+            select hdct.ma_hop_dong
+            from hop_dong_chi_tiet as hdct
+            join dich_vu_di_kem as dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+            where dvdk.ma_dich_vu = ma_dich_vu
+        );
+        
+        -- xóa các bản ghi liên quan trong bảng dich_vu_di_kem
+        delete from dich_vu_di_kem where ma_dich_vu_di_kem = ma_dich_vu;
+        
+        -- xóa bản ghi trong bảng dich_vu
+        delete from dich_vu where ma_dich_vu = ma_dich_vu;
+    end loop;
+    
+    close cur;
+    
+end //
+
+delimiter ;
+
+call sp_xoa_dich_vu_va_hd_room();
+
  
