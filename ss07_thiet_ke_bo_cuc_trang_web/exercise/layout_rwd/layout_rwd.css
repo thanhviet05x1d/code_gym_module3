@@ -1,0 +1,89 @@
+* {
+    font-family: Arial sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+            "header header login"
+            "link content ads"
+            "footer footer footer"
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header {
+    background-color: burlywood;
+    grid-area: header;
+    line-height: 50px;
+}
+
+.header a {
+    padding: 15px;
+}
+
+.login-icon {
+    grid-area: login;
+    text-align: center;
+    background-color: burlywood;
+    line-height: 50px;
+}
+
+.login-icon .icon {
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+
+}
+
+.header a:hover, .login-icon:hover {
+    background-color: black;
+    color: white;
+}
+
+.link, .ads {
+    background-color: aliceblue;
+}
+
+.link a {
+    grid-area: link;
+    text-align: center;
+    display: block;
+    padding-top: 20px;
+}
+
+.content {
+    grid-area: content;
+    padding: 20px;
+}
+
+.content p {
+    margin: 20px;
+}
+
+.ads a {
+    grid-area: ads;
+    text-align: center;
+    display: block;
+    border: 1px solid grey;
+    padding: 15px;
+    margin: 20px;
+    background-color: white;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: black;
+    grid-column: 1/4;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}

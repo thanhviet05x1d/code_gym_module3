@@ -1,0 +1,78 @@
+body {
+    font-family: sans-serif Arial;
+    padding: 0;
+    margin: 0;
+}
+
+iframe {
+    display: block;
+}
+
+h3 {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+#container {
+    display: grid;
+    box-sizing: border-box;
+    height: 100vh;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 10% 10% 1fr 10%;
+    grid-template-areas:
+        "logo logo logo"
+        "head-link head-link head-link"
+        "left-content right-content right-content"
+        "footer footer footer";
+}
+
+.logo {
+    grid-area: logo;
+    font-size: 20px;
+    position: fixed;
+}
+
+.head-link {
+    grid-area: head-link;
+    text-align: center;
+    line-height: 60px;
+}
+
+.head-link a {
+    border-right: 1px solid black;
+}
+
+.head-link .gop-y {
+    border: none;
+}
+
+.left-content {
+    grid-area: left-content;
+}
+
+.left-content h3 {
+    margin-bottom: 30px;
+}
+
+.left-content iframe {
+    width: 90%;
+    height: auto;
+}
+
+.right-content {
+    grid-area: right-content;
+}
+
+.right-content iframe {
+    width: 100%;
+    height: 50%;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+}
