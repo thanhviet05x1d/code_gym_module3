@@ -1,5 +1,5 @@
 * {
-    font-family: Arial sans-serif;
+    font-family: "Arial", sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -17,23 +17,21 @@
 
 a {
     text-decoration: none;
+    color: aliceblue;
+    padding: 15px;
 }
 
 
 .header {
-    background-color: burlywood;
+    background-color: #222222;
     grid-area: header;
     line-height: 50px;
-}
-
-.header a {
-    padding: 15px;
 }
 
 .login-icon {
     grid-area: login;
     text-align: center;
-    background-color: burlywood;
+    background-color: #222222;
     line-height: 50px;
 }
 
@@ -41,16 +39,16 @@ a {
     font-size: 20px;
     position: relative;
     top: 5px;
-
 }
 
-.header a:hover, .login-icon:hover {
-    background-color: black;
-    color: white;
+.link {
+    background-color: #7b7569;
 }
 
-.link, .ads {
-    background-color: aliceblue;
+.ads {
+    background-color: #949089;
+    border: 1px solid red;
+    border-radius: 10px 10px;
 }
 
 .link a {
@@ -58,6 +56,8 @@ a {
     text-align: center;
     display: block;
     padding-top: 20px;
+    border: 1px solid red;
+    border-radius: 2px 2px;
 }
 
 .content {
@@ -76,7 +76,8 @@ a {
     border: 1px solid grey;
     padding: 15px;
     margin: 20px;
-    background-color: white;
+    background-color: aqua;
+    border-radius: 5px 5px;
 }
 
 .footer {
