@@ -39,12 +39,12 @@
                         <!--End LOGO-->
                         <!--Start Search-->
 
-                        <div class="col-lg-6  d-flex" style="font-size: 18px">
+                        <div class="col-lg-6  d-flex" style="font-size: 12px">
                             <c:if test="${sessionScope.account.roleName == 'admin'}">
                                 <li class="nav-item dropdown fs-4 mt-1" style="list-style-type: none;">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                        aria-expanded="false">
-                                        Quản lí
+                                        Hệ thống
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="accountServlet?action=userList">Tài khoản</a>

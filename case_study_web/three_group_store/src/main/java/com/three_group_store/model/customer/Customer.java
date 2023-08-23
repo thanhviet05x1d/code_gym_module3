@@ -30,6 +30,17 @@ public class Customer {
         this.accUserName = accUserName;
     }
 
+    public Customer(String name, Date dOB, boolean gender, String idCard, String phoneNumber, String email, String address, String accUserName) {
+        this.name = name;
+        this.dOB = dOB;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.accUserName = accUserName;
+    }
+
     public Customer(int id, String name, Date dOB, boolean gender, String idCard, String phoneNumber, String email, String address, int typeOfCustomerID, String accUserName) {
         this.id = id;
         this.name = name;
@@ -54,7 +65,20 @@ public class Customer {
         this.address = address;
     }
 
-     public int getId() {
+    public Customer(int id, String name, Date dOB, boolean gender, String idCard, String phoneNumber, String email, String address, String accUserName) {
+        this.id = id;
+        this.name = name;
+        this.dOB = dOB;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.accUserName = accUserName;
+    }
+
+
+    public int getId() {
         return id;
     }
 

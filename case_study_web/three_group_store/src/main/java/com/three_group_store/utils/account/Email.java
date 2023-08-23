@@ -1,4 +1,4 @@
-package com.three_group_store.common.account;
+package com.three_group_store.utils.account;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

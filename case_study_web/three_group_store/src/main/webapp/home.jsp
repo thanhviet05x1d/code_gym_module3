@@ -59,7 +59,6 @@
                      class="d-block w-100" alt="...">
             </div>
 
-
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,7 +73,7 @@
 <!--End Carousel-->
 <main style="margin-top: 20px" class="container">
     <div class="my-2">
-        <span>Sắp xếp theo:</span>
+        <span>Hiển thị theo:</span>
         <a href="/ProductServlet?action=sortAsc" class="btn btn-outline-dark">Giá thấp đến cao</a>
         <a href="/ProductServlet?action=sortDesc" class="btn btn-outline-dark">Giá cao đến thấp</a>
     </div>
@@ -127,7 +126,7 @@
 <!--Start footer-->
 <jsp:include page="home/footer.jsp"/>
 <!--End footer-->
-<a href="/ProductServlet?action=listAdmin">admin</a>
+<a href="/ProductServlet?action=listAdmin">Admin</a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>

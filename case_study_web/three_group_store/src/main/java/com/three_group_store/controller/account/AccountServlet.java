@@ -1,6 +1,6 @@
 package com.three_group_store.controller.account;
 
-import com.three_group_store.common.account.Email;
+import com.three_group_store.utils.account.Email;
 import com.three_group_store.model.account.Account;
 import com.three_group_store.model.customer.Customer;
 import com.three_group_store.service.account.AccountService;
