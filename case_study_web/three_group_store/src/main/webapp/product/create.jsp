@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 7/6/2023
-  Time: 10:11 PM
-  To change this template use File | Settings | File Templates.
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -30,7 +23,7 @@
             text-align: center;
         }
         body {
-            background-image: url("https://images.unsplash.com/photo-1517646450441-a0faf4152caf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80") ;
+            background-image: url("https://noithatthienminh.vn/wp-content/uploads/2022/02/tms06-7.jpg") ;
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -98,7 +91,7 @@
                         </c:if></td>
                 </tr>
                 <tr align="center">
-                    <td><a class="btn btn-success" href="/ProductServlet?action=productManagerment">Quay lại
+                    <td><a class="btn btn-success" href="/ProductServlet?action=productManagement">Quay lại
                         danh sách</a></td>
                     <td><input class="btn btn-danger" type="submit" name="submit" value="Thêm mới"></td>
                 </tr>

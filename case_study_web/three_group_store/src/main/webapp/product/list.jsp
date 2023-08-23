@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 7/6/2023
-  Time: 3:50 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -35,34 +28,7 @@
             type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
     ></script>
-    <style>
-        /*body {*/
-        /*    font-size: x-large;*/
-        /*    margin-left: 20px;*/
-        /*    font-weight: bolder;*/
-        /*}*/
 
-        /*table {*/
-        /*    margin: 20px;*/
-        /*}*/
-
-        /*table, tr, td, th {*/
-        /*    border: 2px solid gray;*/
-        /*    padding: 5px;*/
-        /*    text-align: center;*/
-        /*    border-collapse: collapse;*/
-        /*}*/
-
-        /*h1 {*/
-        /*    text-align: center;*/
-        /*    color: black;*/
-        /*}*/
-
-        /*h2 {*/
-        /*    text-align: left;*/
-        /*    margin-left: 20px;*/
-        /*}*/
-    </style>
 </head>
 <body>
 <%--<jsp:include page="/home/header.jsp"/>--%>
@@ -87,7 +53,7 @@
 
         <div class="w-50 float-end d-inline-block">
             <form class="d-flex mt-0">
-                <input type="hidden" name="action" value="search" >
+                <input type="hidden" name="action" value="search">
                 <input class="form-control me-2" type="text" placeholder="Nhập tên sản phẩm..." id="searchProductId"
                        name="name"
                        value="${name}" style="width: auto">
@@ -100,9 +66,9 @@
                 </select>
                 <div class="col-md-auto d-inline-block float-end me-2">
                     <button class="btn btn-primary" style="width: auto" type="submit">Tìm kiếm</button>
-                </div >
+                </div>
                 <div class="col-md-auto d-inline-block float-end me-2" style="width: auto">
-                    <a href="/ProductServlet?action=productManagerment" class="btn btn-primary">Hủy</a>
+                    <a href="/ProductServlet?action=productManagement" class="btn btn-primary">Hủy</a>
                 </div>
             </form>
         </div>
@@ -142,7 +108,7 @@
                                href="/ProductServlet?action=view&id=${product.id}">Chi tiết</a>
                         </td>
                         <td>
-                                <%-- <a class="btn btn-outline-danger btn-sm" href="/ProductServlet?action=delete&id=${product.id}">Delete</a>--%>
+
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-danger btn-sm" data-mdb-toggle="modal"
                                     data-mdb-target="#exampleModal"
@@ -203,16 +169,3 @@
     }
 </script>
 </html>
-<%--<div class="row d-flex container-fluid  ">--%>
-<%--    <div class="col-lg-3 col-md-6 col-sm-12 align-content-center">--%>
-<%--        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded " style="width: 18rem;">--%>
-<%--            <img src="<c:out value="${product.imgPath}"/>" class="card-img-top" alt="...">--%>
-<%--            <div class="card-body">--%>
-<%--                <h5 class="card-title"><c:out value="${product.name}"/></h5>--%>
-<%--                <p class="card-text"><c:out value="${product.description}"/></p>--%>
-<%--                <p class="card-text"><c:out value="${product.price}"/></p>--%>
-<%--                <a href="#" class="btn btn-primary">Add to cart</a>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>

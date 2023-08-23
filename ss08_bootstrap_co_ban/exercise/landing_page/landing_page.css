@@ -1,0 +1,55 @@
+a {
+    text-decoration: none;
+}
+
+#header ion-icon {
+    width: 50px;
+    height: 20px;
+    color: black;
+}
+
+.card-img-overlay {
+    color: black;
+    width: 30%;
+    padding: 70px;
+}
+
+.card {
+    border: none;
+}
+
+#banner img {
+    height: 70%;
+}
+
+#head-link ion-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#head-link {
+    text-align: center;
+    margin: 0 300px;
+}
+
+.carousel .carousel-item {
+    height: 200px;
+}
+
+.carousel-item img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    min-height: 200px;
+}
+
+#primary-content {
+    padding: 30px 90px;
+    text-align: center;
+
+}
+#footer{
+    background-color: #CDCDCD;
+    text-align: center;
+}

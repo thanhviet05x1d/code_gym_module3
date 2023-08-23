@@ -33,8 +33,8 @@
                     <div class="row col-12">
                         <div style="padding-right: 5%" class="align-items-center col-lg-3 ">
                             <a id="logoQueen" class="navbar-brand fs-2 text-dark" href="/ProductServlet">
-                                <i class="fa-solid fa-crown"></i>
-                                Queen Store</a>
+                                <i class="bi bi-bag"></i>
+                                Group 3 - Store</a>
                         </div>
                         <!--End LOGO-->
                         <!--Start Search-->
@@ -50,7 +50,7 @@
                                         <li><a class="dropdown-item" href="accountServlet?action=userList">Tài khoản</a>
                                         </li>
                                         <li><a class="dropdown-item" href="CustomerServlet">Người dùng</a></li>
-                                        <li><a class="dropdown-item" href="/ProductServlet?action=productManagerment">Sản
+                                        <li><a class="dropdown-item" href="/ProductServlet?action=productManagement">Sản
                                             phẩm</a></li>
                                         <li><a class="dropdown-item" href="/vouchers">Voucher</a></li>
                                         <li><a class="dropdown-item" href="order">Đơn Hàng</a></li>
@@ -61,7 +61,7 @@
                                 <form class="d-flex justify-content-center" style="width: 100%" action="/ProductServlet"
                                       method="get">
                                     <input type="search" class="form-control bg-light" name="name" value="${name}"
-                                           style="border-radius: 30px;width: 45%;border-color: black"
+                                           style="border-radius: 10px;width: 45%;border-color: black"
                                            placeholder="Tên sản phẩm">
                                     <input type="search" name="action" value="search" hidden="hidden">
                                     <select class="form-select me-2 bg-light"
@@ -80,7 +80,7 @@
                                 <form class="d-flex justify-content-center" style="width: 100%" action="/ProductServlet"
                                       method="get">
                                     <input type="search" class="form-control bg-light" name="name" value="${name}"
-                                           style="border-radius: 30px;width: 45%;border-color: black" placeholder="Tên sản phẩm">
+                                           style="border-radius: 10px;width: 45%;border-color: black" placeholder="Tên sản phẩm">
                                     <input type="search" name="action" value="search" hidden="hidden">
                                     <select class="form-select me-2" style="width: 100px" name="range">
                                         <option value="0">Tất cả</option>
@@ -96,7 +96,7 @@
                         </div>
 
                         <!--End Search-->
-                        <!--                Start cart & loin-->
+                        <!--Start cart & login-->
                         <div class="col-lg-3 d-flex  fs-4">
                             <c:if test="${sessionScope.account.roleName != 'admin'}">
                                 <div class="cart d-flex">
@@ -139,10 +139,10 @@
                                     </c:if>
                                 </c:if>
                             </div>
-                            <!--                    End login-->
+                            <!--End login-->
                         </div>
                     </div>
-                    <!--                End cart & login-->
+                    <!-- End cart & login-->
                     <div class="row bg-light col-12">
                     </div>
                 </nav>

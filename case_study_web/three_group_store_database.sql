@@ -212,4 +212,49 @@ call insert_product( "Ghế công thái học công nghệ 1_4",470000, "thươn
 call insert_product( "Ghế công thái học công nghệ 1_5",570000, "thương hiệu: Xiaomi  xuất xứ: Lào ","Ghế công thái học 5", 500, "https://i.postimg.cc/bJn1SNYf/Gh-C-ng-Th-i-H-c-Ergonomic-WARRIOR-WEC509-3.jpg") ;
 call insert_product( "Ghế công thái học công nghệ 1_6",670000, "thương hiệu: Xiaomi  xuất xứ: Lào ","Ghế công thái học 6", 600, "https://i.postimg.cc/D0KLrkmJ/Gh-C-ng-Th-i-H-c-Sihoo-M90-B-M-u-x-m-C-K-Ch-n-4.jpg") ;
 
-/* 3.3. Thêm sản phẩm mẫu */
+/* 3.3. Thêm thể loại khách hàng */
+insert into type_of_customer(type_of_customer_id,type_of_customer_name)
+values
+(1,"silver"),
+(2,"platinum"),
+(3,"gold"),
+(4,"diamond");
+
+/* 3.4. Thêm nhóm người dùng Web */
+insert into role(role_name)
+values ('admin'),('user');
+ 
+ /* 3.5. Thêm tài khoản mẫu để dùng Web */
+
+insert into account
+values 	('viet@gmail.com','12345678',1),
+		('long@gmail.com','12345678',1),
+        ('hau@gmail.com','12345678',1),
+        ('sang@gmail.com','12345678',1),
+        ('viet1@gmail.com','12345678',2),
+        ('viet2@gmail.com','12345678',2),
+        ('viet3@gmail.com','12345678',2),
+        ('viet4@gmail.com','12345678',2);
+        
+/* 3.6. Thêm người dùng mẫu để dùng Web */
+        
+insert into `user`(`user_name`,`user_dob`,`user_gender`,`user_id_card`,`user_phone_number`,`user_mail`,`user_address`,`type_of_customer_id`,`account_user_name`) 
+values('viet',"1990-12-20",1,"212723756","0987654321","viet@gmail.com","danang",2,"viet@gmail.com"),
+("long","1990-12-20",1,"2044444","0987654321","long@gmail.com","hue",2,"long@gmail.com"),
+("hau","1990-12-20",1,"2044444","090344444","hau@gmail.com","hue",2,"hau@gmail.com"),
+("sang","1990-12-20",1,"2044444","090344444","sang@gmail.com","hue",2,"sang@gmail.com"),
+("viet 1","1990-12-20",1,"2044444","090344444","viet1@gmail.com","hue",2,"viet1@gmail.com"),
+("viet 2","1990-12-20",0,"2044444","090344444","viet2@gmail.com","hue",2,"viet2@gmail.com"),
+("viet 3","1990-12-20",0,"2044444","090344444","viet3@gmail.com","hue",2,"viet3@gmail.com"),
+("viet 4","1990-12-20",0,"2044444","090344444","viet4@gmail.com","hue",2,"viet4@gmail.com");
+
+/* 4. Một số hàm phát sinh */
+/* 4.1. Hàm xóa User */
+
+delimiter //
+create procedure sp_delete_user(in user_id int)
+begin
+    delete from users where id = user_id;
+end //
+delimiter ;
+

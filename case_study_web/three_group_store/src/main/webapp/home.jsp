@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 7/7/2023
-  Time: 10:47 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -12,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Queen Store</title>
+    <title>Group 3 - Store</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -40,19 +34,32 @@
         <div class="carousel-inner">
             <div class="carousel-item active ">
                 <img height="500px"
-                     src="https://static.comem.vn/uploads/June2023/serum-destop.jpg"
+                     src="https://i.postimg.cc/dVWWr3vZ/p1.png"
                      class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img height="500px"
-                     src="https://nmbrandingco.com/cdn/shop/files/Header-Natural_Skincare.png?v=1681920931&width=3840"
+                     src="https://i.postimg.cc/2Sjc1hpf/p2.png"
                      class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img height="500px"
-                     src="https://static.comem.vn/uploads/June2023/serum-destop.jpg"
+                     src="https://i.postimg.cc/44tFqXvj/p3.png"
                      class="d-block w-100" alt="...">
             </div>
+            <div class="carousel-item">
+                <img height="500px"
+                     src="https://i.postimg.cc/xT2FSBt8/p4.png"
+                     class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img height="500px"
+                     src="https://i.postimg.cc/pdpsZvXG/p5.png"
+                     class="d-block w-100" alt="...">
+            </div>
+
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,7 +80,7 @@
     </div>
     <c:if test="${!message.isEmpty()}">
         <div class="text-danger " style="text-align: center">
-        <c:out value="${message}"/>
+            <c:out value="${message}"/>
         </div>
     </c:if>
     <div class="row d-flex  justify-align-center">
@@ -93,28 +100,28 @@
                 </div>
             </div>
         </c:forEach>
-            <div class="pagination container d-flex justify-content-center align-items-center">
-                <c:if test="${currentPage > 1}">
-                    <a class="fs-5" href="?page=${currentPage-1}">&laquo; Previous</a>
-                </c:if>
-                &nbsp;
-                <c:forEach var="i" begin="1" end="${noOfPages}">
-                    <c:choose>
-                        <c:when test="${currentPage eq i}">
-                            <span class="fs-5" class="current">${i}</span>
-                            &nbsp;
-                        </c:when>
-                        <c:otherwise>
-                            <a class="fs-5" href="?page=${i}">${i}</a>
-                            &nbsp;
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
-                &nbsp;
-                <c:if test="${currentPage < noOfPages}">
-                    <a class="fs-5" href="?page=${currentPage+1}">Next &raquo;</a>
-                </c:if>
-            </div>
+        <div class="pagination container d-flex justify-content-center align-items-center">
+            <c:if test="${currentPage > 1}">
+                <a class="fs-5" href="?page=${currentPage-1}">&laquo; Previous</a>
+            </c:if>
+            &nbsp;
+            <c:forEach var="i" begin="1" end="${noOfPages}">
+                <c:choose>
+                    <c:when test="${currentPage eq i}">
+                        <span class="fs-5" class="current">${i}</span>
+                        &nbsp;
+                    </c:when>
+                    <c:otherwise>
+                        <a class="fs-5" href="?page=${i}">${i}</a>
+                        &nbsp;
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+            &nbsp;
+            <c:if test="${currentPage < noOfPages}">
+                <a class="fs-5" href="?page=${currentPage+1}">Next &raquo;</a>
+            </c:if>
+        </div>
     </div>
 </main>
 <!--Start footer-->
