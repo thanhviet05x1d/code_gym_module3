@@ -12,7 +12,7 @@
 
         .nav-a a {
 
-            font-weight: 500;
+            font-weight: 200;
             text-decoration: none;
             color: black;
             text-align: center;
@@ -31,10 +31,10 @@
                 <nav style="padding-left: 4%;" class="navbar navbar-expand-lg bg-light navbar-dark ">
                     <!--Start LOGO-->
                     <div class="row col-12">
-                        <div style="padding-right: 5%" class="align-items-center col-lg-3 ">
-                            <a id="logoQueen" class="navbar-brand fs-2 text-dark" href="/ProductServlet">
+                        <div style="padding-right: 2%" class="align-items-center col-lg-3">
+                            <a id="logoStore3" class="navbar-brand fs-2 text-dark" href="/ProductServlet">
                                 <i class="bi bi-bag"></i>
-                                Group 3 - Store</a>
+                                G3_Store</a>
                         </div>
                         <!--End LOGO-->
                         <!--Start Search-->
@@ -42,9 +42,9 @@
                         <div class="col-lg-6  d-flex" style="font-size: 12px">
                             <c:if test="${sessionScope.account.roleName == 'admin'}">
                                 <li class="nav-item dropdown fs-4 mt-1" style="list-style-type: none;">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                        aria-expanded="false">
-                                        Hệ thống
+                                        Admin
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="accountServlet?action=userList">Tài khoản</a>
@@ -61,7 +61,7 @@
                                 <form class="d-flex justify-content-center" style="width: 100%" action="/ProductServlet"
                                       method="get">
                                     <input type="search" class="form-control bg-light" name="name" value="${name}"
-                                           style="border-radius: 10px;width: 45%;border-color: black"
+                                           style="border-radius: 5px;width: 45%;border-color: black"
                                            placeholder="Tên sản phẩm">
                                     <input type="search" name="action" value="search" hidden="hidden">
                                     <select class="form-select me-2 bg-light"
